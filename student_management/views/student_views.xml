@@ -13,12 +13,12 @@
                         </h1>
                     </div>
                     <group>
-                        <group>
+                        <group string="Personal Information">
                             <field name="student_id" />
                             <field name="gender" />
                             <field name="date_of_birth" />
                         </group>
-                        <group>
+                        <group string="Contact Information">
                             <field name="phone_number"/>
                             <field name="email_address" />
                             <field name="address" />
