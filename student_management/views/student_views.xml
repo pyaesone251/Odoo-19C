@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_school_student_form" model="ir.ui.view">
+        <field name="name">school.student.form</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <form string="Students">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="Student Name"/>
+                        <h1>
+                            <field name="name" placeholder="e.g. U Mya"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="student_id" />
+                            <field name="gender" />
+                            <field name="date_of_birth" />
+                        </group>
+                        <group>
+                            <field name="phone_number"/>
+                            <field name="email_address" />
+                            <field name="address" />
+                            <field name="active" invisible="1" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_school_student_list" model="ir.ui.view">
+        <field name="name">school.student.list</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <list string="Student">
+                <field name="name"/>
+                <field name="student_id" />
+                <field name="gender" />
+                <field name="date_of_birth" />
+                <field name="phone_number" />
+                <field name="email_address" optional="hide" />
+                <field name="address" optional="hide" />
+            </list>
+        </field>
+    </record>
+
+    <record id="action_school_student_view" model="ir.actions.act_window">
+        <field name="name">School Student</field>
+        <field name="res_model">school.student</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

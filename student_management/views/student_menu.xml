@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_student_root" name="Student Management" sequence="10" web_icon="student_management,static/description/icon.png"/>
+
+    <menuitem id="menu_student_view" name="Students" parent="menu_student_root" sequence="20" action="action_school_student_view" />
+</odoo>
