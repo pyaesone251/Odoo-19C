@@ -16,3 +16,7 @@ class SchoolStudent(models.Model):
     email_address = fields.Char(string='Email Address')
     address = fields.Text(string='Address')
     active = fields.Boolean(string='Active',default=True)
+
+    # Relation
+    class_id = fields.Many2one('school.class',string='Class')
+    subject_ids = fields.Many2many('school.subject',string="Subject")

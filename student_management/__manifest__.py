@@ -13,6 +13,9 @@
     'data':[
         'security/ir.model.access.csv',
         'views/student_views.xml',
+        'views/student_information_view.xml',
+        'views/school_class_view.xml',
+        'views/school_subject_view.xml',
         'views/student_menu.xml',
     ],
     'sequence':1,

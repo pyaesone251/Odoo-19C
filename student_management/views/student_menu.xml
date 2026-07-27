@@ -3,4 +3,8 @@
     <menuitem id="menu_student_root" name="Student Management" sequence="10" web_icon="student_management,static/description/icon.png"/>
 
     <menuitem id="menu_student_view" name="Students" parent="menu_student_root" sequence="20" action="action_school_student_view" />
+
+    <menuitem id="menu_school_class" name="Class" parent="menu_student_root" sequence="30" action="action_school_class_view" />
+
+    <menuitem id="menu_school_subject" name="Subject" parent="menu_student_root" sequence="40" action="action_school_subject_view" />
 </odoo>
