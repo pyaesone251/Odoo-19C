@@ -42,6 +42,8 @@
                 <field name="gender" />
                 <field name="date_of_birth" />
                 <field name="phone_number" />
+                <field name="class_id"/>
+                <field name="subject_ids" widget="many2many_tags" />
                 <field name="email_address" optional="hide" />
                 <field name="address" optional="hide" />
             </list>

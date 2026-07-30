@@ -1,0 +1,213 @@
+.o_chm_home_menu {
+    min-height: 100%;
+    padding: 54px 24px 32px;
+    background:
+        linear-gradient(135deg, transparent 0 39%, rgba(255, 255, 255, 0.3) 39.1% 60%, transparent 60.1%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0) 0 70%, rgba(255, 255, 255, 0.22) 70.1% 86%, rgba(255, 255, 255, 0) 86.1%),
+        #dcd9e8;
+    color: #263142;
+    overflow: auto;
+}
+
+.o_chm_shell {
+    width: 768px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.o_chm_search {
+    margin-bottom: 28px;
+
+    input {
+        width: 100%;
+        height: 40px;
+        padding: 0 14px;
+        border: 1px solid rgba(30, 41, 59, 0.18);
+        border-radius: 8px;
+        background: #fff;
+        color: #263142;
+        font-size: 14px;
+        box-shadow: 0 4px 12px rgba(28, 32, 46, 0.08);
+
+        &:focus {
+            outline: 0;
+            border-color: rgba(1, 126, 132, 0.5);
+            box-shadow: 0 4px 14px rgba(1, 126, 132, 0.18);
+        }
+    }
+}
+
+.o_chm_apps {
+    display: grid;
+    grid-template-columns: repeat(6, 68px);
+    column-gap: 68px;
+    row-gap: 32px;
+    align-items: start;
+}
+
+.o_chm_app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 68px;
+    min-width: 68px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #263142;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible,
+    &.active {
+        outline: 0;
+
+        .o_chm_app_icon {
+            box-shadow: 0 10px 18px rgba(28, 32, 46, 0.18);
+            transform: translateY(-1px);
+        }
+
+        .o_chm_app_label {
+            color: #111827;
+        }
+    }
+}
+
+.o_chm_app_icon {
+    display: grid;
+    place-items: center;
+    width: 68px;
+    height: 68px;
+    overflow: hidden;
+    border: 1px solid rgba(30, 41, 59, 0.13);
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 5px 14px rgba(28, 32, 46, 0.11);
+    transition: box-shadow 120ms ease, transform 120ms ease;
+
+    img,
+    .o_chm_fallback_icon {
+        display: block;
+        width: 56px !important;
+        height: 56px !important;
+        max-width: 56px !important;
+        max-height: 56px !important;
+    }
+
+    img {
+        object-fit: contain;
+    }
+}
+
+.o_chm_fallback_icon {
+    display: grid !important;
+    place-items: center;
+    border-radius: 4px;
+    font-size: 24px;
+}
+
+.o_chm_app_label {
+    display: block;
+    width: 92px;
+    margin-left: -12px;
+    overflow: hidden;
+    color: #263142;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.o_chm_menu_results {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 34px;
+}
+
+.o_chm_menu_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 46px;
+    padding: 8px 10px;
+    border: 1px solid rgba(30, 41, 59, 0.12);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.72);
+    color: #263142;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(28, 32, 46, 0.08);
+
+    strong,
+    small {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    strong {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    small {
+        margin-top: 2px;
+        color: #667085;
+        font-size: 12px;
+    }
+
+    &:hover,
+    &:focus-visible,
+    &.active {
+        border-color: rgba(1, 126, 132, 0.36);
+        outline: 0;
+        box-shadow: 0 8px 18px rgba(28, 32, 46, 0.12);
+    }
+}
+
+.o_chm_empty {
+    padding-top: 12px;
+    color: #667085;
+    font-size: 14px;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .o_chm_shell {
+        width: 568px;
+        max-width: 100%;
+    }
+
+    .o_chm_apps {
+        grid-template-columns: repeat(4, 68px);
+        column-gap: 74px;
+    }
+}
+
+@media (max-width: 575px) {
+    .o_chm_home_menu {
+        padding: 32px 18px;
+    }
+
+    .o_chm_shell {
+        width: 344px;
+        max-width: 100%;
+    }
+
+    .o_chm_apps {
+        grid-template-columns: repeat(3, 68px);
+        column-gap: 70px;
+        row-gap: 28px;
+    }
+
+    .o_chm_menu_results {
+        grid-template-columns: 1fr;
+    }
+}

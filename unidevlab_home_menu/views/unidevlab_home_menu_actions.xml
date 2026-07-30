@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_unidevlab_home_menu" model="ir.actions.client">
+            <field name="name">Home</field>
+            <field name="tag">unidevlab_home_menu.action</field>
+            <field name="target">main</field>
+            <field name="path">home</field>
+        </record>
+
+        <menuitem
+            id="menu_unidevlab_home_menu"
+            name="Home"
+            action="action_unidevlab_home_menu"
+            sequence="-100"
+        />
+    </data>
+</odoo>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+<t t-name="unidevlab_home_menu.HomeMenu">
+    <main class="o_chm_home_menu" t-on-keydown="onKeydown">
+        <section class="o_chm_shell" aria-label="Applications">
+            <div class="o_chm_search">
+                <input
+                    t-ref="searchInput"
+                    type="search"
+                    t-att-placeholder="searchPlaceholder"
+                    t-att-aria-label="searchPlaceholder"
+                    t-att-value="state.query"
+                    t-on-input="onSearchInput"
+                />
+            </div>
+
+            <div t-if="visibleApps.length" class="o_chm_apps" role="listbox" aria-label="Applications">
+                <button
+                    t-foreach="visibleApps"
+                    t-as="app"
+                    t-key="app.id"
+                    type="button"
+                    role="option"
+                    class="o_chm_app"
+                    t-att-class="{ active: app.id === activeId }"
+                    t-att-data-menu-xmlid="app.xmlid"
+                    t-on-click="() => this.openMenu(app)"
+                >
+                    <span class="o_chm_app_icon">
+                        <img t-if="app.webIconData" t-att-src="app.webIconData" t-att-alt="app.label"/>
+                        <span
+                            t-else=""
+                            class="o_chm_fallback_icon"
+                            t-att-style="'background-color: ' + (app.webIcon and app.webIcon.backgroundColor || '#5b677a') + '; color: ' + (app.webIcon and app.webIcon.color || '#ffffff')"
+                        >
+                            <i t-att-class="app.webIcon and app.webIcon.iconClass || 'fa fa-cube'" aria-hidden="true"/>
+                        </span>
+                    </span>
+                    <span class="o_chm_app_label" t-esc="app.label"/>
+                </button>
+            </div>
+
+            <section t-if="visibleMenuItems.length" class="o_chm_menu_results" aria-label="Menu results">
+                <button
+                    t-foreach="visibleMenuItems"
+                    t-as="item"
+                    t-key="item.id"
+                    type="button"
+                    class="o_chm_menu_item"
+                    t-att-class="{ active: item.id === activeId }"
+                    t-on-click="() => this.openMenu(item)"
+                >
+                    <span>
+                        <strong t-esc="item.label"/>
+                        <small t-if="item.parents" t-esc="item.parents"/>
+                    </span>
+                    <i class="fa fa-arrow-right" aria-hidden="true"/>
+                </button>
+            </section>
+
+            <div t-if="!hasResults" class="o_chm_empty" role="status" t-esc="emptyLabel"/>
+        </section>
+    </main>
+</t>
+
+</templates>
