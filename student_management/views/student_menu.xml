@@ -7,4 +7,6 @@
     <menuitem id="menu_school_class" name="Class" parent="menu_student_root" sequence="30" action="action_school_class_view" />
 
     <menuitem id="menu_school_subject" name="Subject" parent="menu_student_root" sequence="40" action="action_school_subject_view" />
+
+    <menuitem id="menu_school_teacher" name="Teachers" parent="menu_student_root" sequence="50" action="action_school_teacher_view" />
 </odoo>
