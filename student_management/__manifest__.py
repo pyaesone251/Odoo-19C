@@ -12,6 +12,7 @@
     'depends':['base'],
     'data':[
         'security/ir.model.access.csv',
+        'security/school_admin.xml',
         'views/student_views.xml',
         'views/student_information_view.xml',
         'views/school_class_view.xml',
