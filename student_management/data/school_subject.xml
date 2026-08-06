@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <record id="school_subject_java" model="school.subject">
+            <field name="name">Java</field>
+            <field name="code">001</field>
+        </record>
+        <record id="school_subject_ai" model="school.subject">
+            <field name="name">AI</field>
+            <field name="code">002</field>
+        </record>
+    </data>
+</odoo>

@@ -18,6 +18,7 @@
         'views/school_class_view.xml',
         'views/school_subject_view.xml',
         'views/school_teacher_view.xml',
+        'data/school_subject.xml',
         'views/student_menu.xml',
     ],
     'sequence':1,
